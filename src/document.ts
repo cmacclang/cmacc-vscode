@@ -16,8 +16,8 @@ export class HtmlDocumentView {
         this.doc = document;
         this.title = `Preview: '${path.basename(window.activeTextEditor.document.fileName)}'`;
         this.provider = new HtmlDocumentContentProvider(this.doc);
-        this.registrations.push(workspace.registerTextDocumentContentProvider("html-preview", this.provider));
-        this.previewUri = Uri.parse(`html-preview://preview/${this.title}`);
+        this.registrations.push(workspace.registerTextDocumentContentProvider("cmacc-preview", this.provider));
+        this.previewUri = Uri.parse(`cmacc-preview://preview/${this.title}`);
         this.registerEvents();
     }
     
@@ -27,12 +27,7 @@ export class HtmlDocumentView {
 
     private registerEvents() {
         this.registrations.push(workspace.onDidChangeTextDocument((e: TextDocumentChangeEvent) => {
-            if (!this.visible) {
-                return;
-            }
-            if (e.document === this.doc) {
-                this.provider.update(this.previewUri);
-            }
+            this.provider.update(this.previewUri);
         }));
     }
 
@@ -90,7 +85,6 @@ class HtmlDocumentContentProvider implements TextDocumentContentProvider {
     }
 
     public update(uri: Uri) {
-        console.log('Update file');
         this._onDidChange.fire(uri);
     }
 

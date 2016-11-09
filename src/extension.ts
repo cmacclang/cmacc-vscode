@@ -1,14 +1,11 @@
 "use strict";
 import { window, ExtensionContext, commands, Uri,
-    ViewColumn, TextDocument, TextEditor } from "vscode";
+    ViewColumn, TextDocument, TextEditor, workspace } from "vscode";
 import * as uuid from "node-uuid";
 import { HtmlDocumentView } from "./document";
 
-export enum SourceType {
-    SCRIPT,
-    STYLE
-}
 let viewManager: ViewManager;
+
 export function activate(context: ExtensionContext) {
     viewManager = new ViewManager();
 
@@ -77,6 +74,7 @@ class ViewManager {
             value = values.next();
         }
     }
+    
 }
 
 class IDMap {

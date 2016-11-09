@@ -2,9 +2,9 @@
   "name": "cmacc-vscode",
   "displayName": "CMACC Preview",
   "description": "A CMACC previewer",
-  "version": "0.0.3",
-  "publisher": "tht13",
-  "author": "Thomas Haakon Townsend",
+  "version": "0.0.2",
+  "publisher": "wilmveel",
+  "author": "Willem Veelenturf",
   "license": "MIT",
   "readme": "README.md",
   "repository": {
@@ -61,7 +61,7 @@
     }]
   },
   "scripts": {
-    "vscode:prepublish": "node ./node_modules/vscode/bin/compile",
+    "vscode:prepublish": "echo 123",
     "compile": "node ./node_modules/vscode/bin/compile -watch -p ./",
     "postinstall": "node ./node_modules/vscode/bin/install"
   },
