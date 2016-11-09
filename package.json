@@ -1,0 +1,77 @@
+{
+  "name": "cmacc-vscode",
+  "displayName": "CMACC Preview",
+  "description": "A CMACC previewer",
+  "version": "0.0.3",
+  "publisher": "tht13",
+  "author": "Thomas Haakon Townsend",
+  "license": "MIT",
+  "readme": "README.md",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/wilmveel/cmacc-vscode"
+  },
+  "galleryBanner": {
+    "color": "#78d6f0",
+    "theme": "light"
+  },
+  "bugs": "https://github.com/wilmveel/cmacc-vscode/issues",
+  "homepage": "https://github.com/wilmveel/cmacc-vscode/blob/master/README.md",
+  "icon": "images/icon.png",
+  "main": "./out/src/extension",
+  "engines": {
+    "vscode": "^1.1.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "activationEvents": [
+    "onCommand:cmacc.preview",
+    "onCommand:cmacc.previewToSide"
+  ],
+  "contributes": {
+    "keybindings": [
+      {
+        "command": "cmacc.preview",
+        "key": "ctrl+shift+h",
+        "when": "editorTextFocus"
+      },
+      {
+        "command": "cmacc.previewToSide",
+        "key": "ctrl+k h",
+        "when": "editorTextFocus"
+      }
+    ],
+    "commands": [
+      {
+        "command": "cmacc.preview",
+        "title": "Toggle Preview",
+        "category": "CMACC"
+      },
+      {
+        "command": "cmacc.previewToSide",
+        "title": "Open Preview to the Side",
+        "category": "CMACC"
+      }
+    ],
+    "languages": [{
+      "id": "cmacc",
+      "aliases": ["cmacc", "CmAcc"],
+      "extensions": [".cmacc"]
+    }]
+  },
+  "scripts": {
+    "vscode:prepublish": "node ./node_modules/vscode/bin/compile",
+    "compile": "node ./node_modules/vscode/bin/compile -watch -p ./",
+    "postinstall": "node ./node_modules/vscode/bin/install"
+  },
+  "dependencies": {
+    "file-url": "^1.1.0",
+    "node-uuid": "^1.4.7",
+    "cmacc-compiler": "wilmveel/cmacc-compiler#master"
+  },
+  "devDependencies": {
+    "typescript": "^1.8.10",
+    "vscode": "^0.11.13"
+  }
+}
