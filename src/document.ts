@@ -26,7 +26,7 @@ export class HtmlDocumentView {
     }
 
     private registerEvents() {
-        this.registrations.push(workspace.onDidChangeTextDocument((e: TextDocumentChangeEvent) => {
+        this.registrations.push(workspace.onDidSaveTextDocument((e: TextDocument) => {
             this.provider.update(this.previewUri);
         }));
     }
