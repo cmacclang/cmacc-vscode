@@ -57,8 +57,15 @@
     "languages": [{
       "id": "cmacc",
       "aliases": ["cmacc", "CmAcc"],
-      "extensions": [".cmacc"]
-    }]
+      "extensions": [".cmacc"],
+      "configuration": "./cmacc.configuration.json"
+    }],
+    "grammars": [{
+            "language": "cmacc",
+            "scopeName": "scope.cmacc",
+            "path": "./syntaxes/cmacc.tmLanguage"
+        }]
+
   },
   "scripts": {
     "vscode:prepublish": "echo 123",
