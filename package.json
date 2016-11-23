@@ -2,7 +2,7 @@
   "name": "cmacc-vscode",
   "displayName": "CMACC Preview",
   "description": "A CMACC previewer",
-  "version": "0.0.6",
+  "version": "0.0.7",
   "publisher": "wilmveel",
   "author": "Willem Veelenturf",
   "license": "MIT",
