@@ -112,13 +112,22 @@ class HtmlDocumentContentProvider implements TextDocumentContentProvider {
 
         var options = {
             path: 'file://' + path.dirname(file)
+        };
+
+        try{
+            var ast = cmacc.compile(text, options)
+            var md = cmacc.resolve(ast);
+            var html = cmacc.marked(md);
+            
+            return html
+
+        }catch (e){
+            window.showErrorMessage(e.message);
+            return ''
         }
 
-        var ast = cmacc.compile(text, options)
-        var md = cmacc.resolve(ast);  
-        var html = cmacc.marked(md); 
 
-        return html
+        
     }
 
     public preview(): string {
