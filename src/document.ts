@@ -123,7 +123,7 @@ class HtmlDocumentContentProvider implements TextDocumentContentProvider {
 
         }catch (e){
             window.showErrorMessage(e.message);
-            return ''
+            return '<pre>' + e.stack + '</pre>'
         }
 
 
