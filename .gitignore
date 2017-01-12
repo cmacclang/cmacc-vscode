@@ -9,3 +9,5 @@ typings/globals
 
 .DS_Store
 
+yarn.lock
+
