@@ -2,7 +2,7 @@
   "name": "cmacc-vscode",
   "displayName": "CMACC Preview",
   "description": "A CMACC previewer",
-  "version": "0.0.26",
+  "version": "0.0.27",
   "publisher": "wilmveel",
   "author": "Willem Veelenturf",
   "license": "MIT",
@@ -84,7 +84,7 @@
   "dependencies": {
     "file-url": "^1.1.0",
     "node-uuid": "^1.4.7",
-    "cmacc-compiler": "1.0.12"
+    "cmacc-compiler": "1.0.13"
   },
   "devDependencies": {
     "typescript": "^1.8.10",
