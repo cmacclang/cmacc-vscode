@@ -108,8 +108,10 @@ class HtmlDocumentContentProvider implements TextDocumentContentProvider {
         var file = this.doc.fileName
 
         var opts = {
-            base: 'file://' + path.dirname(file)
+            base: 'file://' + path.dirname(file) + '/'
         };
+
+        console.log(opts)
 
         global['fs'] = require('fs')
         global['fetch'] = require('node-fetch')

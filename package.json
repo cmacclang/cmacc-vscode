@@ -83,7 +83,6 @@
   },
   "dependencies": {
     "cmacc-compiler": "cmacclang/cmacc-compiler#v2",
-    "file-url": "^1.1.0",
     "node-fetch": "^1.7.1",
     "node-uuid": "^1.4.8"
   },
