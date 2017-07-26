@@ -62,8 +62,7 @@ class ViewManager {
 
     public preview() {
         // activeTextEditor does not exist when triggering on a html preview
-        this.sendHTMLCommand(window.activeTextEditor.viewColumn,
-            window.activeTextEditor.document, true);
+        this.sendHTMLCommand(window.activeTextEditor.viewColumn, window.activeTextEditor.document, true);
     }
     
     public dispose() {

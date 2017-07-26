@@ -2,8 +2,6 @@ import { workspace, window, commands, TextDocumentContentProvider,
     Event, Uri, TextDocumentChangeEvent, ViewColumn, EventEmitter,
     TextDocument, Disposable } from "vscode";
 import * as path from "path";
-import fileUrl = require("file-url");
-import { SourceType } from "./extension";
 
 export class HtmlDocumentView {
     private provider: HtmlDocumentContentProvider;
@@ -43,7 +41,6 @@ export class HtmlDocumentView {
     public executeToggle(column: ViewColumn) {
         if (this.visible) {
             window.showTextDocument(this.doc, column);
-            this.visible = false;
         } else {
             this.execute(column);
         }
@@ -110,24 +107,24 @@ class HtmlDocumentContentProvider implements TextDocumentContentProvider {
         var text = this.doc.getText();
         var file = this.doc.fileName
 
-        var options = {
-            path: 'file://' + path.dirname(file)
+        var opts = {
+            base: 'file://' + path.dirname(file)
         };
 
-        try{
-            var ast = cmacc.compile(text, options)
-            var md = cmacc.resolve(ast);
-            var html = cmacc.marked(md);
-            
-            return html
-
-        }catch (e){
-            window.showErrorMessage(e.message);
-            return '<pre>' + e.stack + '</pre>'
-        }
-
-
+        global['fs'] = require('fs')
+        global['fetch'] = require('node-fetch')
         
+        return cmacc.compile(text, opts)
+            .then(ast => {
+                return ast;
+            })
+            .then(cmacc.render)
+            .then(x => cmacc.remarkable.render(x))
+            .then(html => {
+                console.log(html)
+                return html;
+            })
+            .catch(e => window.showErrorMessage(e.message));
     }
 
     public preview(): string {
