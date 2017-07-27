@@ -2,7 +2,7 @@
   "name": "cmacc-vscode",
   "displayName": "CMACC Preview",
   "description": "A CMACC previewer",
-  "version": "2.0.1",
+  "version": "2.0.3",
   "publisher": "wilmveel",
   "author": "Willem Veelenturf",
   "license": "MIT",
@@ -76,8 +76,6 @@
     ]
   },
   "scripts": {
-    "vscode:prepublish": "echo 123",
-    "vscode:preLaunchTask": "echo 123",
     "compile": "node ./node_modules/vscode/bin/compile -watch -p ./",
     "postinstall": "node ./node_modules/vscode/bin/install"
   },
