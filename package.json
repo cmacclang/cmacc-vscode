@@ -2,7 +2,7 @@
   "name": "cmacc-vscode",
   "displayName": "CMACC Preview",
   "description": "A CMACC previewer",
-  "version": "2.0.13",
+  "version": "2.0.14",
   "publisher": "wilmveel",
   "author": "Willem Veelenturf",
   "license": "MIT",
@@ -46,7 +46,11 @@
       {
         "command": "cmacc.preview",
         "title": "Toggle Preview",
-        "category": "CMACC"
+        "category": "CMACC",
+        "icon": {
+          "light": "./media/Preview.svg",
+          "dark": "./media/Preview_inverse.svg"
+        }
       },
       {
         "command": "cmacc.previewToSide",
@@ -55,7 +59,8 @@
         "icon": {
           "light": "./media/Preview.svg",
           "dark": "./media/Preview_inverse.svg"
-        }      }
+        }
+      }
     ],
     "menus": {
 			"editor/title": [
