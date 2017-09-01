@@ -2,7 +2,7 @@
   "name": "cmacc-vscode",
   "displayName": "CMACC Preview",
   "description": "A CMACC previewer",
-  "version": "2.0.17",
+  "version": "2.0.18",
   "publisher": "wilmveel",
   "author": "Willem Veelenturf",
   "license": "MIT",
@@ -63,28 +63,28 @@
       }
     ],
     "menus": {
-			"editor/title": [
-				{
-					"command": "cmacc.preview",
-					"when": "editorLangId == cmacc",
-					"group": "navigation"
-				}
-			],
-			"explorer/context": [
-				{
-					"command": "cmacc.preview",
-					"when": "resourceLangId == cmacc",
-					"group": "navigation"
-				}
-			],
-			"commandPalette": [
-				{
-					"command": "cmacc.preview",
-					"when": "editorLangId == cmacc",
-					"group": "navigation"
-				}
-			]
-		},
+      "editor/title": [
+        {
+          "command": "cmacc.preview",
+          "when": "editorLangId == cmacc",
+          "group": "navigation"
+        }
+      ],
+      "explorer/context": [
+        {
+          "command": "cmacc.preview",
+          "when": "resourceLangId == cmacc",
+          "group": "navigation"
+        }
+      ],
+      "commandPalette": [
+        {
+          "command": "cmacc.preview",
+          "when": "editorLangId == cmacc",
+          "group": "navigation"
+        }
+      ]
+    },
     "languages": [
       {
         "id": "cmacc",
