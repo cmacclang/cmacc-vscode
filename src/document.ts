@@ -126,7 +126,10 @@ class HtmlDocumentContentProvider implements TextDocumentContentProvider {
                 console.log(html)
                 return html;
             })
-            .catch(e => window.showErrorMessage(e.message));
+            .catch(e => {
+                console.error(e);
+                window.showErrorMessage(e.message);
+            });
     }
 
     public preview(): string {
