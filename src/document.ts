@@ -111,8 +111,6 @@ class HtmlDocumentContentProvider implements TextDocumentContentProvider {
             base: 'file://' + path.dirname(file) + '/'
         };
 
-        console.log(opts)
-
         global['fs'] = require('fs')
         global['fetch'] = require('node-fetch')
         
@@ -129,6 +127,7 @@ class HtmlDocumentContentProvider implements TextDocumentContentProvider {
             .catch(e => {
                 console.error(e);
                 window.showErrorMessage(e.message);
+                return e.stack;
             });
     }
 
